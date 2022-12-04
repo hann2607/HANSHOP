@@ -1,0 +1,203 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #333;
+}
+
+#header-container {
+    transition: top 0.5s;
+}
+
+.modal-backdrop {
+    z-index: 1000 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #2B2D42;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+a {
+    color: #2B2D42;
+    font-weight: 500;
+    -webkit-transition: 0.2s color;
+    transition: 0.2s color;
+}
+
+a:hover,
+a:focus {
+    color: #D10024;
+    text-decoration: none;
+    outline: none;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.button-custom {
+    color: #FFFFFF;
+    background-color: #D10024;
+    border: 2px solid #D10024;
+    border-radius: 40px;
+}
+
+.button-custom:hover {
+    color: #D10024 !important;
+    background-color: #FFFFFF !important;
+    border: 2px solid #D10024 !important;
+}
+
+
+/* End CSS ALL FILE */
+
+
+.contact-info {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #1E1F29;
+}
+
+.contact-info ul {
+    width: 100%;
+    display: block;
+}
+
+.contact-info ul li {
+    list-style: none;
+    display: inline;
+    margin-left: 3%;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.contact-info a:hover {
+    color: #D10024;
+}
+
+.contact-info svg {
+    color: #D10024;
+    vertical-align: middle;
+}
+
+#header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #15161D;
+}
+
+header .logo {
+    padding: 0px 15px;
+}
+
+header .logo .logo-img {
+    width: 85px;
+}
+
+main a {
+    text-decoration: none;
+}
+
+.sale a {
+    color: #FFFFFF;
+}
+
+.card-body .product-btns>button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+    border: none;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.card-body .product-btns>button:hover {
+    background-color: #E4E7ED;
+    color: #D10024;
+    border-radius: 50%;
+}
+
+.card-body .product-btns>button .tooltipp {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -15px);
+    -ms-transform: translate(-50%, -15px);
+    transform: translate(-50%, -15px);
+    width: 150px;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 10px;
+    background: #1e1f29;
+    color: #FFF;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.card-body .product-btns>button:hover .tooltipp {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(-50%, -5px);
+    -ms-transform: translate(-50%, -5px);
+    transform: translate(-50%, -5px);
+}
+
+.product-height {
+    height: 100px !important;
+}
+
+.width-product {
+    width: 23%;
+}
+
+.a-footer {
+    color: #2B2D42;
+    color: #B9BABC;
+    text-decoration: none;
+    font-weight: 500;
+    -webkit-transition: 0.2s color;
+    transition: 0.2s color;
+}
+
+.text-color-footer {
+    color: #B9BABC;
+}
+
+@media only screen and (max-width: 1200px) {
+    .width-product {
+        width: 47%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .product-height {
+        height: 125px !important;
+    }
+}
+
+@media only screen and (max-width: 502px) {
+    .product-height {
+        height: 155px !important;
+    }
+}

@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en" ng-app="myapp" ng-controller="products">
+
+<head>
+    <title>CHI TIẾT SẢN PHẨM</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/DetailsProduct.css">
+
+    <!-- link fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Angular js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.3/angular-messages.min.js"
+        integrity="sha512-a+xgEyXVK7r+KKIDYyHtFfLi9LItmFDff6Z4/5lrGmL03u1vtFCjQXQz3dSIwOapB3YIRMBO1+IQj6ptnxAh/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="views/apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body ng-controller="cart">
+    <header class="fixed-top" id="header-container">
+        <!-- Contact infomation -->
+        <div class="contact-info">
+            <div class="container d-md-flex d-inline-block text-center">
+                <ul class="header-links float-start d-lg-flex justify-content-lg-start">
+                    <li><a href="#" class="text-nowrap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg> +84 123 45 6789</a></li>
+                    <li><a href="#" class="text-nowrap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                            </svg> hannps19480@fpt.edu.vn</a></li>
+                    <li><a href="#" class="text-nowrap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                            </svg> Quận 12, TP Hồ Chí Minh</a></li>
+                </ul>
+
+                <ul class="header-links float-end d-lg-flex justify-content-lg-end">
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z" />
+                            </svg> VNĐ</a></li>
+                    <li><a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg> ĐĂNG NHẬP</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Contact infomation -->
+
+        <div id="header">
+            <div class="container">
+                <div class="row d-flex">
+                    <!-- logo -->
+                    <div class="logo col-10 col-lg-2">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="" class="logo-img">
+                        </a>
+                    </div>
+                    <!-- logo -->
+                    <div class="col-2 col-lg-10 justify-content-center">
+                        <div class="row d-none d-lg-flex">
+                            <!-- search -->
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Tìm kiếm"
+                                        aria-label="search" aria-describedby="search-addon" />
+                                    <button type="button" class="btn"
+                                        style="background-color: #D10024; color: #FFFFFF;">Tìm kiếm</button>
+                                </div>
+                            </div>
+                            <!-- search -->
+
+                            <!-- cart -->
+                            <div class="col-md-4 d-flex">
+                                <button type="button" class="btn" style="background-color: #D10024; color: #FFFFFF;"
+                                    data-bs-toggle="modal" data-bs-target="#Cart"><i
+                                        class="fa-solid fa-bag-shopping"></i> GIỎ HÀNG</button>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="Cart" tabindex="-1" aria-labelledby="CartLabel"
+                                aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="CartLabel">GIỎ HÀNG</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <section class="h-100 h-custom" style="background-color: #eee;">
+                                                <div class="container py-5 h-100">
+                                                    <div
+                                                        class="row d-flex justify-content-center align-items-center h-100">
+                                                        <div class="col">
+                                                            <div class="card">
+                                                                <div class="card-body p-4">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-7">
+                                                                            <div
+                                                                                class="d-flex justify-content-between align-items-center mb-4">
+                                                                                <div>
+                                                                                    <p class="mb-0">Giỏ của bạn hiện
+                                                                                        đang có {{totalProduct}} sản
+                                                                                        phẩm</p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="card mb-3"
+                                                                                ng-repeat="p in carts">
+                                                                                <div class="card-body">
+                                                                                    <div class="d-flex">
+                                                                                        <div
+                                                                                            class="d-flex flex-row align-items-center col-6">
+                                                                                            <div>
+                                                                                                <img src="{{img}}"
+                                                                                                    ng-repeat="img in p.img | limitTo:1"
+                                                                                                    class="rounded-3"
+                                                                                                    alt="Shopping item"
+                                                                                                    style="width: 60px;">
+                                                                                            </div>
+                                                                                            <div class="ms-3">
+                                                                                                <h5>{{p.name}}
+                                                                                                </h5>
+                                                                                                <p class="small mb-0">
+                                                                                                    {{p.infomation.hardDrive}},
+                                                                                                    {{p.color}}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="d-flex flex-row align-items-center">
+                                                                                            <div style="width: 50px;"
+                                                                                                class="m-3">
+                                                                                                <input
+                                                                                                    class="border border-0 text-center form-control"
+                                                                                                    type="number"
+                                                                                                    ng-model="p.quantity"
+                                                                                                    ng-change="changeQuantity(this)"
+                                                                                                    style="width: 60px; font-size: 1.25rem; padding: 0 !important;">
+                                                                                            </div>
+                                                                                            <div style="width: 175px;"
+                                                                                                class="ms-2">
+                                                                                                <h5 class="mb-0">
+                                                                                                    {{FormatNumber(p.price
+                                                                                                    * p.quantity)}}
+                                                                                                    VNĐ
+                                                                                                </h5>
+                                                                                            </div>
+                                                                                            <a href="#"
+                                                                                                ng-click="removeProductInCart(this)"
+                                                                                                style="color: #cecece;"><i
+                                                                                                    class="fas fa-trash-alt"></i></a>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                        <div class="col-lg-5">
+
+                                                                            <div
+                                                                                class="card bg-primary text-white rounded-3">
+                                                                                <div class="card-body">
+                                                                                    <div
+                                                                                        class="d-flex align-items-center mb-4 justify-content-center">
+                                                                                        <h5 class="mb-0">CHI TIẾT GIỎ
+                                                                                            HÀNG
+                                                                                        </h5>
+                                                                                    </div>
+
+                                                                                    <hr class="my-4">
+
+                                                                                    <div
+                                                                                        class="d-flex justify-content-between">
+                                                                                        <p class="mb-2">Tổng tiền
+                                                                                            ({{totalProduct}} sản
+                                                                                            phẩm)</p>
+                                                                                        <p class="mb-2">
+                                                                                            {{FormatNumber(totalPrice)}}
+                                                                                            VNĐ
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <hr>
+                                                                                    <div
+                                                                                        class="d-flex justify-content-between mb-4">
+                                                                                        <p class="mb-2">Thành tiền</p>
+                                                                                        <p class="mb-2">
+                                                                                            {{FormatNumber(totalPrice)}}
+                                                                                            VNĐ
+                                                                                        </p>
+                                                                                    </div>
+
+                                                                                    <div
+                                                                                        class="d-flex align-content-center justify-content-center">
+                                                                                        <button type="button"
+                                                                                            class="btn btn-info btn-block btn-lg">
+                                                                                            <a href="checkout.html"
+                                                                                                style="text-decoration: none; color: #2B2D42;">
+                                                                                                <div>
+                                                                                                    <span> Thanh toán <i
+                                                                                                            class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </button>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <!-- cart -->
+                        </div>
+
+                        <div class="row h-100 justify-content-center pb-2">
+                            <nav class="navbar navbar-expand-lg navbar-dark ms-0" id="navbar">
+                                <div class="container-fluid">
+                                    <button class="navbar-toggler w-100" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasNavbarExample-expand-lg"
+                                        aria-controls="offcanvasNavbarExample-expand-lg"
+                                        style="padding: 5px 9px !important;">
+                                        <span class="navbar-toggler-icon w-100"
+                                            data-bs-target="#offcanvasNavbarExample-expand-lg"></span>
+                                    </button>
+                                    <div class="offcanvas offcanvas-start bg-dark" data-bs-hideresize="true"
+                                        tabindex="-1" id="offcanvasNavbarExample-expand-lg"
+                                        aria-labelledby="offcanvasNavbarExample-expand-lg">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasLabel" style="color:white;">
+                                                MENU</h5>
+                                            <button type="button" class="btn-close btn-close-white text-reset"
+                                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="row d-block d-lg-none">
+                                                <!-- search -->
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <input type="search" class="form-control rounded-start"
+                                                            placeholder="Tìm kiếm" aria-label="Search"
+                                                            aria-describedby="search-addon" />
+                                                        <button type="button" class="btn"
+                                                            style="background-color: #D10024; color: #FFFFFF;">Tìm
+                                                            kiếm</button>
+                                                    </div>
+                                                </div>
+                                                <!-- search -->
+
+                                                <!-- cart -->
+                                                <div class="col-md-6 mt-3 mb-4">
+                                                    <button class="btn"
+                                                        style="background-color: #D10024; color: #FFFFFF;"><a
+                                                            href="checkout.html"
+                                                            style="text-decoration: none; color: #FFFFFF;"><i
+                                                                class="fa-solid fa-bag-shopping"></i> GIỎ
+                                                            HÀNG</a></button>
+                                                </div>
+                                                <!-- cart -->
+                                            </div>
+                                            <hr style="color: gainsboro;">
+                                            <ul class="navbar-nav flex-grow-1 pe-3">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" aria-current="page" href="index.html"><i
+                                                            class="fa-sharp fa-solid fa-house"></i> Trang
+                                                        chủ</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><i
+                                                            class="fa-solid fa-mobile-screen"></i> Điện thoại</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><i class="fa-solid fa-laptop"></i>
+                                                        Laptop</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><i class="fa-solid fa-desktop"></i> Máy
+                                                        tính</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#"><i class="fa-solid fa-headphones"></i>
+                                                        Phụ kiện</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main  -->
+    <main ng-controller="openDetailsProduct">
+        <div class="container">
+            <!-- Product detail  -->
+            <div class="row mt-4">
+                <div class="col-12 col-md-6">
+                    <!-- Slide  -->
+                    <div class="row">
+                        <div id="carouselExampleDark" class="carousel carousel-dark slide mt-4 mb-2"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active" data-bs-interval="7000">
+                                    <img src="{{productDetail.img[1]}}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{{productDetail.img[2]}}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{{productDetail.img[3]}}" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="prev">
+                                <i class="fa-solid fa-circle-chevron-left fa-3x" style="color: #15161D;"></i>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                                data-bs-slide="next">
+                                <i class="fa-solid fa-circle-chevron-right fa-3x" style="color: #15161D;"></i>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-center text-center mb-4">
+                        <img src="{{productDetail.imgThumb[0]}}" alt="" data-bs-target="#carouselExampleDark"
+                            data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"
+                            style="width: 100px; height: 100px; cursor: pointer;">
+                        <img src="{{productDetail.imgThumb[1]}}" alt="" data-bs-target="#carouselExampleDark"
+                            data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"
+                            style="width: 100px; height: 100px; cursor: pointer;">
+                        <img src="{{productDetail.imgThumb[2]}}" alt="" data-bs-target="#carouselExampleDark"
+                            data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"
+                            style="width: 100px; height: 100px; cursor: pointer;">
+                    </div>
+                    <!-- Slide  -->
+                </div>
+                <div class="col-12 col-md-6">
+                    <h4>{{productDetail.name}}</h4>
+                    <h5 class="card-text" style="color: #D10024;">{{FormatNumber(productDetail.price)}} VNĐ <del
+                            style="color: #8D99AE;">{{FormatNumber(productDetail.oldPrice)}}
+                            VNĐ</del></h5>
+                    <p>
+                        <Strong>THÔNG SỐ KĨ THUẬT</Strong> <br>
+                        <span><Strong>Màn hình: </Strong></span> <span>{{productDetail.infomation.screen}}</span> <br>
+                        <span><Strong>Hệ điều hành: </Strong></span>
+                        <span>{{productDetail.infomation.operatingSystem}}</span> <br>
+                        <span><Strong>Camera sau: </Strong></span> <span>{{productDetail.infomation.rearCamera}}</span>
+                        <br>
+                        <span><Strong>Camera trước: </Strong></span>
+                        <span>{{productDetail.infomation.frontCamera}}</span> <br>
+                        <span><Strong>Chip: </Strong></span> <span>{{productDetail.infomation.Chip}}</span> <br>
+                        <span><Strong>Tốc độ CPU: </Strong></span> <span>{{productDetail.infomation.CPUSpeed}}</span>
+                        <br>
+                        <span><Strong>Chip đồ họa (GPU): </Strong></span> <span>{{productDetail.infomation.GPU}}</span>
+                        <br>
+                        <span><Strong>RAM: </Strong></span> <span>{{productDetail.infomation.RAM}}</span> <br>
+                        <span><Strong>Dung lượng lưu trữ: </Strong></span>
+                        <span>{{productDetail.infomation.hardDrive}}</span> <br>
+                        <span><Strong>SIM: </Strong></span> <span>{{productDetail.infomation.sim}}</span>
+                        <br>
+                        <span><Strong>Pin, Sạc: </Strong></span> <span>{{productDetail.infomation.pin}}</span> <br>
+                        <span><Strong>Wifi: </Strong></span> <span>{{productDetail.infomation.wifi}}</span> <br>
+                        <span><Strong>Bluetooth: </Strong></span> <span>{{productDetail.infomation.bluetooth}}</span>
+                        <br>
+                        <span><Strong>Cổng kết nối/sạc: </Strong></span>
+                        <span>{{productDetail.infomation.USB}}</span> <br>
+                        <span><Strong>Jack tai nghe: </Strong></span>
+                        <span>{{productDetail.infomation.headphoneJack}}</span> <br>
+                    </p>
+                    <div class="row d-flex align-items-center">
+                        <div class="col-1"><span><strong>Màu: </strong></span></div>
+                        <div class="col-5 col-lg-3 ms-4 ms-lg-0">
+                            <select class="form-select" ng-model="selectedColor" ng-change="changeColor()"
+                                ng-init="selectedColor = productDetail.color[0]">
+                                <option ng-repeat="c in productDetail.color" value="{{c}}">{{c}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row d-flex align-items-center mt-3 mb-4 position-relative">
+                        <div class="col-9 col-lg-5 d-flex align-items-center">
+                            <span class="text-nowrap me-3"><strong>Số lượng: </strong></span>
+                            <input type="number" class="form-control" id="soluong" placeholder="Số lượng"
+                                ng-model="quantityOnFormDetails" ng-change="changeQuantityOnDetails()">
+                        </div>
+                        <div class="col-lg-5 mt-4 mt-lg-0 d-flex justify-content-center">
+                            <div class="add-to-cart">
+                                <button class="btn add-to-cart-btn" ng-click="addToCartFromDetailsProduct(this)">
+                                    <i class="fa fa-shopping-cart"></i> THÊM VÀO GIỎ HÀNG
+                                </button>
+                            </div>
+                        </div>
+                        <!-- notification -->
+                        <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1050">
+                            <div id="liveToast" class="toast bg-dark text-light" role="alert" aria-live="assertive"
+                                aria-atomic="true">
+                                <div class="toast-header">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfz3upZJUzgki4bn27faJf6gPIIo7Yo5HxZg&usqp=CAU"
+                                        class="rounded me-2" alt="..." height="20px">
+                                    <strong class="me-auto">THÊM THÀNH CÔNG!</strong>
+                                    <small>10 giây trước</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    Sản phẩm của bạn đã được thêm vào giỏ hàng!
+                                </div>
+                            </div>
+                        </div>
+                        <!-- notification -->
+                    </div>
+                </div>
+            </div>
+            <!-- Product detail  -->
+
+            <hr>
+
+            <!-- Product infomation  -->
+            <section class="mt-3">
+                <h2 class="text-center">THÔNG TIN SẢN PHẨM</h2>
+                <h5>Samsung Galaxy A73 5G 128GB được xem là sản phẩm nổi bật nhất dòng Galaxy A 2022 mới ra mắt, máy
+                    trang bị bộ thông số kỹ thuật ấn tượng về phần hiệu năng, chất lượng màn hình và nổi bật nhất trong
+                    số đó là camera khi nó đem lại bức ảnh có độ phân giải lên đến 108 MP.</h5> <br>
+                <h5>Thỏa sức nhiếp ảnh với camera chụp ảnh sắc nét</h5> <br>
+                <p>Điều mà mình ấn tượng nhất trên Galaxy A73 5G đó chính là khả năng chụp ảnh khi máy sở hữu 4 ống kính
+                    có độ phân giải lần lượt: Camera chính 108 MP, camera góc siêu rộng 12 MP, cảm biến độ sâu và macro
+                    có cùng độ phân giải 5 MP giúp các bức ảnh thu lại trở nên chi tiết hơn.</p>
+
+                <!-- Button trigger modal -->
+                <div class="row row-cols-3 mb-5">
+                    <div class="col"></div>
+                    <button type="button" class="btn button-custom" data-bs-toggle="modal"
+                        data-bs-target="#ProductInfo">
+                        XEM THÊM
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="ProductInfo" tabindex="-1" aria-labelledby="ProductInfoLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="ProductInfoLabel">THÔNG TIN SẢN PHẨM</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <section class="container">
+                                    <h5>Samsung Galaxy A73 5G 128GB được xem là sản phẩm nổi bật nhất dòng Galaxy A 2022
+                                        mới ra mắt, máy
+                                        trang bị bộ thông số kỹ thuật ấn tượng về phần hiệu năng, chất lượng màn hình và
+                                        nổi bật nhất trong
+                                        số đó là camera khi nó đem lại bức ảnh có độ phân giải lên đến 108 MP.</h5> <br>
+                                    <h5>Thỏa sức nhiếp ảnh với camera chụp ảnh sắc nét</h5> <br>
+                                    <p>Điều mà mình ấn tượng nhất trên Galaxy A73 5G đó chính là khả năng chụp ảnh khi
+                                        máy sở hữu 4 ống kính
+                                        có độ phân giải lần lượt: Camera chính 108 MP, camera góc siêu rộng 12 MP, cảm
+                                        biến độ sâu và macro
+                                        có cùng độ phân giải 5 MP giúp các bức ảnh thu lại trở nên chi tiết hơn.</p>
+                                    <div class="row text-center">
+                                        <img src="https://cdn.tgdd.vn/Products/Images/42/246195/samsung-galaxy-a73-190422-041611.jpg"
+                                            alt="" width="80%">
+                                    </div>
+                                    <br>
+                                    <p>Chụp ảnh ở môi trường đủ sáng, ảnh do Galaxy A73 thu lại có độ chi tiết cao, màu
+                                        sắc tươi tắn, ảnh sau khi zoom lên vẫn mang một chất lượng rất tốt bởi camera
+                                        chính có độ phân giải cao, rất phù hợp với những ai thường dùng điện thoại để
+                                        chụp ảnh.</p>
+                                    <div class="row text-center">
+                                        <img src="https://cdn.tgdd.vn/Products/Images/42/246195/samsung-galaxy-a73-190422-041613.jpg"
+                                            alt="" width="80%">
+                                    </div>
+                                    <br>
+                                    <p>Ảnh chụp vào buổi đêm cũng cho ra chất lượng khá, hiện tượng nhiễu hạt được cải
+                                        thiện, cân bằng ánh sáng tốt giúp tổng thể bức ảnh trông rất hài hòa.</p>
+                                    <div class="row text-center">
+                                        <img src="https://cdn.tgdd.vn/Products/Images/42/246195/samsung-galaxy-a73-190422-041615.jpg"
+                                            alt="" width="80%">
+                                    </div>
+                                    <br>
+                                    <p>Còn về chế độ chụp chân dung cho dù là ngày hay đêm thì kết quả thu được đều làm
+                                        mình bất ngờ, bởi máy mang đến bức ảnh trông rất nịnh mắt và có chiều sâu, độ
+                                        chi tiết tốt, ranh giới giữa những vùng xóa phông và chủ thể được xử lý mịn
+                                        màng.</p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+
+            </section>
+            <!-- Product infomation  -->
+
+            <!-- Related product  -->
+            <section class="mb-5" style="margin-top: 5em;">
+                <h2 class="text-center">SẢN PHẨM LIÊN QUAN</h2>
+                <!-- Products  -->
+                <div class="row row-cols-2 row-cols-lg-4 justify-content-around mb-5"
+                    ng-controller="openDetailsProduct">
+                    <!-- product item  -->
+                    <div class="card text-center width-product rounded-3"
+                        style="margin-top: 1em; padding: 0 !important;" ng-repeat="p in Products | limitTo:4">
+                        <img src="{{p.img[0]}}" class="card-img-top mt-3" alt="...">
+                        <div class="card-body">
+                            <div class="d-flex flex-column justify-content-between product-height">
+                                <h5 class="card-title overflow-hidden"><a href="DetailProduct.html?name={{p.keyword}}"
+                                        ng-click="DetailProduct(p)"><strong>{{p.name}}</strong></a></h5>
+                                <h5 class="card-text"><del class="d-none d-sm-inline"
+                                        style="color: #8D99AE;">{{FormatNumber(p.oldPrice)}}
+                                        VNĐ</del> <br> <Strong style="color: #D10024;">{{FormatNumber(p.price)}}
+                                        VNĐ</Strong></h5>
+                            </div>
+                            <hr class="d-none d-lg-block">
+                            <div class="product-btns mb-3 d-none d-lg-block">
+                                <button type="submit" class="add-to-wishlist">
+                                    <i class="fa-regular fa-heart"></i><span class="tooltipp">YÊU
+                                        THÍCH</span>
+                                </button>
+                                <button type="button" class="add-to-compare" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                    <i class="fa-solid fa-share"></i><span class="tooltipp">CHIA
+                                        SẺ</span>
+                                </button>
+                                <button type="button" class="quick-view" data-toggle="modal"
+                                    data-target="#exampleModalCenter-video">
+                                    <i class="fa fa-eye"></i><span class="tooltipp">XEM NHANH</span>
+                                </button>
+                            </div>
+                            <a href="#" class="btn button-custom bottom-0 d-none d-lg-block"
+                                ng-click="addToCart(this)">THÊM
+                                VÀO GIỎ HÀNG</a>
+                        </div>
+                    </div>
+                    <!-- product item  -->
+                </div>
+                <!-- Products  -->
+            </section>
+            <!-- Related product  -->
+        </div>
+        <!-- Messenger Chat Plugin Code -->
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-a3594566-0dcf-4921-b1fb-95be7b3c3a01"></div>
+    </main>
+    <!-- Main  -->
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-muted" style="background-color: #1E1F29;">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block text-color-footer">
+                <span>Kết nối với chúng tôi trên các trang mạng xã hội:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.facebook.com/hanshop322" class="me-4 a-footer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="me-4 a-footer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="me-4 a-footer">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="me-4 a-footer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="me-4 a-footer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="me-4 a-footer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="text-color-footer">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-light">
+                            <a href="index.html"><img src="images/logo.png" alt="" style="width: 90px;"></a>
+                        </h6>
+                        <p>
+                            Chúng tôi là thương hiệu chuyên cung cấp những món đồ uy tín và chất lượng đến mọi người.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-light">
+                            MENU
+                        </h6>
+                        <p>
+                            <a href="index.html" class="a-footer">Trang
+                                chủ</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Điện thoại</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Laptop</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Máy tính</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Phụ kiện</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-light">
+                            THÔNG TIN
+                        </h6>
+                        <p>
+                            <a href="#" class="a-footer">Về chúng tôi</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Đóng góp ý kiến</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Hướng dẫn sử dụng</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Liên hệ với chúng tôi</a>
+                        </p>
+                        <p>
+                            <a href="#" class="a-footer">Trợ giúp</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 text-light">THÔNG TIN LIÊN HỆ</h6>
+                        <p><i class="fa-solid fa-location-pin me-3"></i> Quận 12, TP Hồ Chí Minh</p>
+                        <p><i class="fa-solid fa-location-pin me-3"></i> Quận HoocMon, TP Hồ Chí Minh</p>
+                        <p class="text-nowrap"><i class="fas fa-envelope me-3"></i> hannnps19480@fpt.edu.vn</p>
+                        <p><i class="fas fa-phone me-3"></i> +84 123 45 6789</p>
+                        <p><i class="fas fa-print me-3"></i> +84 123 45 6789</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: #15161D; color: #FFFFFF;">
+            © 2022 Copyright:
+            <a class="fw-bold a-footer" href="#">Hân Nguyễn</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <!-- Angular js  -->
+    <script src="js/ngapp.js" type="text/javascript"></script>
+    <script src="js/Products.js" type="text/javascript"></script>
+    <script src="js/cart.js" type="text/javascript"></script>
+    <script src="js/OpenDetailsProduct.js" type="text/javascript"></script>
+
+    <!-- javascript  -->
+    <script src="js/javascript.js" type="text/javascript"></script>
+</body>
+
+</html>

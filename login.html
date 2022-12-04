@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>ĐĂNG NHẬP & ĐĂNG KÝ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- link fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- link Angular js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.3/angular-messages.min.js"
+        integrity="sha512-a+xgEyXVK7r+KKIDYyHtFfLi9LItmFDff6Z4/5lrGmL03u1vtFCjQXQz3dSIwOapB3YIRMBO1+IQj6ptnxAh/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="views/apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body ng-app="myapp" ng-controller="signin-signup">
+    <div class="containers">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- SIGNIN -->
+                <form class="sign-in-form" name="SignInForm" novalidate>
+                    <h2 class="title">ĐĂNG NHẬP</h2>
+                    <!-- USERNAME  -->
+                    <div class="input-field">
+                        <i class="fas fa-user"></i> <input type="text" placeholder="Tên đăng nhập" id="usernameLogin"
+                            name="usernameLogin" ng-model="usernameLoginModel" minlength="5" maxlength="28" required />
+                    </div>
+                    <!-- ERROR FOR USERNAME -->
+                    <div ng-if="SignInForm.$submitted || SignInForm.usernameLogin.$dirty"
+                        ng-messages="SignInForm.usernameLogin.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Tên đăng nhập không được để trống!</strong></div>
+                        <div ng-message="minlength"><strong>Tên đăng nhập phải lớn hơn 5 ký tự!</strong></div>
+                        <div ng-message="maxlength"><strong>Tên đăng nhập vượt quá 28 ký tự!</strong></div>
+                        <div ng-message-default><strong>Tên đăng nhập không chính xác!</strong></div>
+                    </div>
+                    <!-- ERROR FOR USERNAME -->
+                    <!-- USERNAME  -->
+
+                    <!-- PASSWORD  -->
+                    <div class="input-field">
+                        <i class="fas fa-user"></i> <input type="password" id="passwordLogin" placeholder="Mật khẩu"
+                            ng-model="passwordLoginModel" name="passwordLogin" minLength="6" maxlength="28" required />
+                    </div>
+                    <!-- ERROR FOR PASSWORD -->
+                    <div ng-if="SignInForm.$submitted || SignInForm.passwordLogin.$dirty"
+                        ng-messages="SignInForm.passwordLogin.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Mật khẩu không được để trống!</strong></div>
+                        <div ng-message="minlength"><strong>Mật khẩu phải lớn hơn 6 ký tự!</strong></div>
+                        <div ng-message="maxlength"><strong>Mật khẩu vượt quá 28 ký tự!</strong></div>
+                        <div ng-message-default><strong>Mật khẩu không chính xác!</strong></div>
+                    </div>
+                    <!-- ERROR FOR PASSWORD -->
+                    <!-- PASSWORD  -->
+
+                    <input type="submit" value="Đăng nhập" class="btn solid" ng-click="login(this)" />
+                    <p class="social-text">Hoặc đăng nhập bằng</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"> <i class="fa-brands fa-facebook"></i>
+                        </a> <a href="#" class="social-icon"> <i class="fa-brands fa-square-twitter"></i>
+                        </a> <a href="#" class="social-icon"> <i class="fa-brands fa-google"></i>
+                        </a> <a href="#" class="social-icon"> <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </div>
+                </form>
+
+                <!-- /SIGNIN -->
+
+                <!-- SIGNUP -->
+                <form class="sign-up-form" name="signUpForm" novalidate>
+                    <h2 class="title">ĐĂNG KÝ</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i> <input type="text" id="usernameRegister" placeholder="Tên đăng nhập"
+                            name="usernameRegister" ng-model="usernameRegisterModel" minlength="5" maxlength="28"
+                            required />
+                    </div>
+                    <!-- ERROR FOR USERNAME -->
+                    <div ng-if="signUpForm.$submitted || signUpForm.usernameRegister.$dirty"
+                        ng-messages="signUpForm.usernameRegister.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Tên đăng nhập không được để trống!</strong></div>
+                        <div ng-message="minlength"><strong>Tên đăng nhập phải lớn hơn 5 ký tự!</strong></div>
+                        <div ng-message="maxlength"><strong>Tên đăng nhập vượt quá 28 ký tự!</strong></div>
+                        <div ng-message-default><strong>Tên đăng nhập không chính xác!</strong></div>
+                    </div>
+                    <!-- ERROR FOR USERNAME -->
+
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i> <input type="password" id="passwordRegister" placeholder="Mật khẩu"
+                            name="passwordRegister" ng-model="passwordRegisterModel" minLength="6" maxlength="28"
+                            required />
+                    </div>
+                    <!-- ERROR FOR PASSWORD -->
+                    <div ng-if="signUpForm.$submitted || signUpForm.passwordRegister.$dirty"
+                        ng-messages="signUpForm.passwordRegister.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Mật khẩu không được để trống!</strong></div>
+                        <div ng-message="minlength"><strong>Mật khẩu phải lớn hơn 6 ký tự!</strong></div>
+                        <div ng-message="maxlength"><strong>Mật khẩu vượt quá 28 ký tự!</strong></div>
+                        <div ng-message-default><strong>Mật khẩu không chính xác!</strong></div>
+                    </div>
+                    <!-- ERROR FOR PASSWORD -->
+
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i> <input type="password" id="rePasswordRegister"
+                            placeholder="Nhập lại mật khẩu" name="rePasswordRegister" ng-model="rePasswordRegisterModel"
+                            pattern="{{passwordRegisterModel}}" required />
+                    </div>
+                    <!-- ERROR FOR REPASSWORD -->
+                    <div ng-if="signUpForm.$submitted || signUpForm.rePasswordRegister.$dirty"
+                        ng-messages="signUpForm.rePasswordRegister.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Xác nhận mật khẩu không được để trống!</strong></div>
+                        <div ng-message="pattern"><strong>Xác nhận mật khẩu không giống với mật khẩu!</strong></div>
+                        <div ng-message-default><strong>Xác nhận mật khẩu không chính xác!</strong></div>
+                    </div>
+                    <!-- ERROR FOR REPASSWORD -->
+
+                    <div class="input-field">
+                        <i class="fas fa-user"></i> <input type="text" placeholder="Họ và tên" name="fullnameRegister"
+                            id="fullnameRegister" ng-model="fullnameRegisterModel"
+                            pattern="^([a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+)$"
+                            required />
+                    </div>
+                    <!-- ERROR FOR FULLNAME -->
+                    <div ng-if="signUpForm.$submitted || signUpForm.fullnameRegister.$dirty"
+                        ng-messages="signUpForm.fullnameRegister.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Họ và tên không được để trống!</strong></div>
+                        <div ng-message="pattern"><strong>Vui lòng nhập chữ!</strong></div>
+                        <div ng-message-default><strong>Họ và tên không chính xác!</strong></div>
+                    </div>
+                    <!-- ERROR FOR FULLNAME -->
+
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i> <input type="email" placeholder="Email" name="emailRegister"
+                            id="emailRegister" ng-model="emailRegisterModel" required />
+                    </div>
+                    <!-- ERROR FOR EMAIL -->
+                    <div ng-if="signUpForm.$submitted || signUpForm.emailRegister.$dirty" class="mb-2"
+                        ng-messages="signUpForm.emailRegister.$error" style="color: #D10024;" role="alert">
+                        <div ng-message="required"><strong>Email không được để trống!</strong></div>
+                        <div ng-message-default><strong>Email không đúng định dạng!</strong></div>
+                    </div>
+                    <!-- ERROR FOR EMAIL -->
+
+                    <input type="submit" value="Đăng ký" class="btn solid" ng-click="register(this)" />
+                    <p class="social-text">Hoặc đăng ký bằng</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"> <i class="fa-brands fa-facebook"></i>
+                        </a> <a href="#" class="social-icon"> <i class="fa-brands fa-square-twitter"></i>
+                        </a> <a href="#" class="social-icon"> <i class="fa-brands fa-google"></i>
+                        </a> <a href="#" class="social-icon"> <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </div>
+                </form>
+                <!-- /SIGNUP -->
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Tạo mới tài khoản?</h3>
+                    <p>
+                        Nếu bạn chưa có tài khoản hãy nhấn vào nút bên dưới. <br>
+                        Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng
+                        tôi.
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">Đăng ký</button>
+                </div>
+                <img src="images/signin-signup/login.svg" alt="" class="image" />
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Nếu bạn đã có tài khoản?</h3>
+                    <p>Hãy nhấn vào nút bên dưới để đăng nhập với quyền người dùng.</p>
+                    <button class="btn transparent" id="sign-in-btn">Đăng nhập</button>
+                </div>
+                <img src="images/signin-signup/register.svg" alt="" class="image" />
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/login.js"></script>
+
+</html>
