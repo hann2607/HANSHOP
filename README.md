@@ -2,7 +2,7 @@
   <img width="400" height="450" src="https://github.com/hann2607/HANSHOP/blob/main/images/logo.png">
 </p>
 
-<h2>MỤC LỤC<h2>
+<h2>TABLE OF CONTENTS<h2>
 
 [1. LOGIN](#login)  
 
