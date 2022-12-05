@@ -14,6 +14,8 @@
 
 [5. CHECKOUT](#checkout)  
 
+[5.1 PAYMENT WITH PAYPAL](#paymentWithPaypal)  
+
 [6. CART](#cart)  
 
 
@@ -47,6 +49,7 @@
 <img src="https://user-images.githubusercontent.com/117273434/205694983-43c23621-e807-479d-b214-1f90dfccc075.png">
 </p>
 
+<a name = "paymentWithPaypal"></a>
 <h1>5.1 PAYMENT WITH PAYPAL<h1>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/117273434/205695467-b015e746-8c50-4377-b695-a2861c26baa2.png">
